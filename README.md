@@ -59,7 +59,7 @@ This automation distinguishes between **business logic errors** and **technical 
 
 - **Technical failures** (Slack API errors, connectivity issues)  
   → Retried automatically (3 attempts, 2-minute intervals)  
-  → Execution is safely halted if failures persist
+  → If retries fail, the execution is marked as incomplete and stored for review
 
 - **Incomplete executions** are stored for audit and replay
 
@@ -78,10 +78,16 @@ This layered approach prevents silent failures and protects downstream systems.
 
 ## Files Included
 
-- `SCENARIO 1.blueprint(10).json`  
+- `SCENARIO_1_blueprint__10_.json`  
   Sanitized Make.com scenario export (safe for sharing)
 
-- `README.md`  
+  **Note:** Make.com’s blueprint export does not always fully reflect router fallback paths in a human-readable way.  
+  The live scenario contains two routes:
+  - Valid data → sales alerts
+  - Invalid data → system alerts  
+  as documented in this README and verified via execution logs.
+
+  - `README.md`  
   Project documentation
 
 ---
@@ -97,3 +103,10 @@ This layered approach prevents silent failures and protects downstream systems.
 ## Notes
 - All identifiers, URLs, and data have been sanitized.
 - This project is intended as a portfolio demonstration of automation design, validation, and reliability patterns.
+
+## Contact
+
+Questions or collaboration?
+
+This project was built as part of an Upwork automation engineering portfolio.  
+Feel free to reach out via Upwork or GitHub for questions, feedback, or collaboration opportunities.

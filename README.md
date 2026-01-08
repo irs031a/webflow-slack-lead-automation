@@ -58,7 +58,7 @@ This automation distinguishes between **business logic errors** and **technical 
   → Routed intentionally to a fallback Slack alert
 
 - **Technical failures** (Slack API errors, connectivity issues)  
-  → Retried automatically (3 attempts, 15-minute intervals)  
+  → Retried automatically (3 attempts, 2-minute intervals)  
   → Execution is safely halted if failures persist
 
 - **Incomplete executions** are stored for audit and replay
@@ -78,7 +78,7 @@ This layered approach prevents silent failures and protects downstream systems.
 
 ## Files Included
 
-- `scenario.json`  
+- `SCENARIO 1.blueprint(10).json`  
   Sanitized Make.com scenario export (safe for sharing)
 
 - `README.md`  
